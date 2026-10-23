@@ -9,39 +9,49 @@
 <meta property="og:description" content="Blink, shhhift, Vilalume e Preço Feito: quatro produtos, quatro problemas do dia a dia.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Outfit:wght@400;500;600;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#FAFAF7; --ink:#14161A; --muted:#566070; --line:#E4E6EA; --card:#FFFFFF;
+  --bg:#07090B; --ink:#E8E4DA; --muted:#B9B5AA; --line:#2A3036; --card:#12161A; --grid:#12161A; --amber:#FFB020; --amberink:#FFB020; --onamber:#07090B; --panel:#0B0E10;
+  color-scheme:dark;
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){--bg:#0F1114; --ink:#F2F3F5; --muted:#9AA3B0; --line:#262B33; --card:#171A1F;}
+:root[data-theme="light"]{
+  --bg:#F4F1EA; --ink:#0F1724; --muted:#4A5262; --line:#CFC9BA; --card:#FBFAF6; --grid:#E8E3D6; --amber:#FFB020; --amberink:#8A5300; --onamber:#07090B; --panel:#FBFAF6;
+  color-scheme:light;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:'Manrope',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+body{margin:0;background-color:var(--bg);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px;color:var(--ink);font-family:'Outfit',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-h1,h2,h3{font-family:'Poppins','Manrope',sans-serif;line-height:1.15;margin:0}
+h1,h2,h3{font-family:'Outfit',system-ui,sans-serif;line-height:1.1;margin:0;letter-spacing:-.03em}
+.mono,.eyebrow,.stat span,.tl .when,.sec h3,.qsec>h3,.pill{font-family:'Fira Code',ui-monospace,monospace}
+.math{font-family:'STIX Two Text',serif;font-style:italic}
 p{margin:0 0 14px}
 
 /* topo */
 .top{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:12px}
-.brand{font-family:'Poppins';font-weight:700;text-decoration:none;white-space:nowrap}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.brand{font-family:'Outfit',system-ui,sans-serif;font-weight:700;text-decoration:none;white-space:nowrap;display:inline-flex;align-items:center;gap:8px;letter-spacing:-.02em}
+.brand svg{width:28px;height:28px}
+.theme{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:6px 12px;font:500 13px 'Fira Code',monospace;cursor:pointer;white-space:nowrap}
+.theme:hover{border-color:var(--amberink)}
+.theme:focus-visible,a:focus-visible{outline:2px solid var(--amberink);outline-offset:2px}
 .top nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
 .top nav a{font-size:14px;font-weight:600;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px;white-space:nowrap}
 .top nav a:hover{color:var(--ink);background:var(--line)}
 
 /* hero */
 .hero{padding:72px 0 48px}
-.eyebrow{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
-.hero h1{font-size:clamp(34px,6vw,60px);font-weight:800;letter-spacing:-.03em;max-width:15ch}
+.eyebrow{font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--amberink);margin-bottom:14px}
+.hero h1{font-size:clamp(40px,7.4vw,84px);font-weight:700;letter-spacing:-.045em;max-width:14ch;line-height:.98}
+.hero h1 em{font-style:normal;color:var(--amberink)}
+.formula{font-family:'STIX Two Text',serif;font-style:italic;font-size:clamp(22px,3vw,30px);margin:18px 0 0}
 .hero .lead{font-size:clamp(17px,2.2vw,20px);color:var(--muted);max-width:60ch;margin-top:20px}
 .chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:36px}
 .chip{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;transition:transform .15s,border-color .15s}
-.chip:hover{transform:translateY(-2px);border-color:var(--ink)}
-.chip b{display:block;font-family:'Poppins';font-size:18px}
+.chip:hover{transform:translateY(-2px);border-color:var(--amberink)}
+.chip b{display:block;font-family:'Outfit',system-ui,sans-serif;font-size:18px}
 .chip span{font-size:14px;color:var(--muted)}
 .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px;vertical-align:1px}
 
@@ -61,16 +71,16 @@ p{margin:0 0 14px}
 .sec .big{font-size:19px;line-height:1.55;max-width:66ch}
 .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
 .box{border:1px solid var(--line);border-radius:16px;padding:18px;background:var(--bg)}
-.box h4{margin:0 0 6px;font-size:16px;font-family:'Poppins'}
+.box h4{margin:0 0 6px;font-size:16px;font-family:'Outfit',system-ui,sans-serif}
 .box p{margin:0;color:var(--muted);font-size:15px}
-.box .n{font-family:'Poppins';font-weight:800;font-size:13px;color:var(--ink);background:var(--accent);color:var(--onaccent);width:28px;height:28px;border-radius:50%;display:grid;place-items:center;margin-bottom:12px}
+.box .n{font-family:'Outfit',system-ui,sans-serif;font-weight:800;font-size:13px;color:var(--ink);background:var(--accent);color:var(--onaccent);width:28px;height:28px;border-radius:50%;display:grid;place-items:center;margin-bottom:12px}
 .vs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
 .vs ul{margin:0;padding:0;list-style:none}
 .vs li{padding:8px 0 8px 26px;position:relative;font-size:15px;border-bottom:1px solid var(--line)}
 .vs li:last-child{border:0}
 .vs .old li::before{content:"✕";position:absolute;left:0;color:#C2452D;font-weight:800}
 .vs .new li::before{content:"✓";position:absolute;left:0;color:#1B8A5A;font-weight:800}
-.vs h4{margin:0 0 6px;font-family:'Poppins';font-size:16px}
+.vs h4{margin:0 0 6px;font-family:'Outfit',system-ui,sans-serif;font-size:16px}
 .list{margin:0;padding:0;list-style:none;display:grid;gap:10px}
 .list li{padding-left:24px;position:relative}
 .list li::before{content:"";position:absolute;left:0;top:.6em;width:10px;height:10px;border-radius:3px;background:var(--accent)}
@@ -92,7 +102,7 @@ p{margin:0 0 14px}
 .quem .intro{display:grid;gap:28px}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
 .stat{border:1px solid var(--line);background:var(--card);border-radius:16px;padding:16px 18px}
-.stat b{display:block;font-family:'Poppins';font-size:clamp(26px,4vw,34px);font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.stat b{display:block;color:var(--ink);font-family:'Outfit',system-ui,sans-serif;font-size:clamp(26px,4vw,34px);font-weight:800;letter-spacing:-.02em;line-height:1.1}
 .stat span{font-size:14px;color:var(--muted)}
 .qsec{margin-top:44px}
 .qsec>h3{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
@@ -102,12 +112,35 @@ p{margin:0 0 14px}
 .tl li{position:relative}
 .tl li::before{content:"";position:absolute;left:-32px;top:.4em;width:12px;height:12px;border-radius:50%;background:var(--ink);border:2px solid var(--bg)}
 .tl .when{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.tl h4{margin:2px 0 6px;font-family:'Poppins';font-size:18px}
+.tl h4{margin:2px 0 6px;font-family:'Outfit',system-ui,sans-serif;font-size:18px}
 .tl p{margin:0;color:var(--muted);font-size:15px;max-width:64ch}
 .tl p b{color:var(--ink)}
 .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
 .links a{display:inline-flex;padding:10px 16px;border-radius:12px;border:1px solid var(--line);background:var(--card);font-weight:700;text-decoration:none;font-size:15px}
 .links a:hover{border-color:var(--ink)}
+
+/* pilares e monetização */
+.pilares{padding:24px 0 12px}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:8px}
+.pcard{border:1.5px solid var(--line);border-radius:20px;background:var(--card);padding:26px}
+.pcard .k{font-family:'Fira Code',monospace;font-size:12px;letter-spacing:.14em;color:var(--amberink);text-transform:uppercase}
+.pcard h3{font-size:28px;margin:8px 0 12px;letter-spacing:-.03em}
+.pcard ul{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+.pcard li{padding-left:22px;position:relative;font-size:15px;color:var(--muted)}
+.pcard li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--amber)}
+.pcard li b{color:var(--ink)}
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:14px;counter-reset:f}
+.flow .st{border:1.5px solid var(--line);border-radius:14px;background:var(--card);padding:16px;position:relative}
+.flow .st::before{counter-increment:f;content:"0" counter(f);font-family:'Fira Code',monospace;font-size:12px;color:var(--amberink);display:block;margin-bottom:6px}
+.flow .st b{display:block;font-size:16px;margin-bottom:4px}
+.flow .st span{font-size:14px;color:var(--muted);line-height:1.45;display:block}
+.eq{border:1.5px solid var(--line);border-left:4px solid var(--amber);border-radius:14px;background:var(--panel);padding:18px 22px;margin-top:14px}
+.eq .math{font-size:24px}
+.eq p{margin:8px 0 0;color:var(--muted);font-size:15px}
+.res{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:14px}
+.callout{border:1.5px solid var(--line);border-radius:16px;background:var(--card);padding:20px 22px;margin-top:14px}
+.callout p:last-child{margin:0}
+.callout a{color:var(--amberink);font-weight:600}
 
 /* fim */
 .about{padding:48px 0 24px}
@@ -115,21 +148,29 @@ p{margin:0 0 14px}
 footer{padding:40px 0 64px;color:var(--muted);font-size:14px;border-top:1px solid var(--line);margin-top:40px}
 footer a{margin-right:16px}
 @media (max-width:560px){.head{padding:32px 20px}.body{padding:28px 20px 32px}.cta.ghost{margin:10px 0 0}}
+h2,h3{text-wrap:balance}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.chip{transition:none}}
 </style>
+<script>
+(function(){var t='dark';try{var v=localStorage.getItem('rc-theme');if(v==='light'||v==='dark')t=v;}catch(e){}document.documentElement.setAttribute('data-theme',t);})();
+</script>
 </head>
 <body>
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#topo">Rafael Couto</a>
+    <a class="brand" href="#topo"><svg viewBox="0 0 200 200" fill="none" aria-hidden="true"><circle cx="100" cy="100" r="90" stroke="currentColor" stroke-width="10"/><line x1="28" y1="142" x2="172" y2="142" stroke="currentColor" stroke-width="8" stroke-linecap="round"/><path d="M 24 142 C 66 142 72 58 100 58 C 128 58 134 142 176 142" stroke="currentColor" stroke-width="10" stroke-linecap="round"/><circle cx="100" cy="58" r="15" fill="#FFB020"/></svg>rafael couto</a>
     <nav>
       <a href="#quem">Quem sou</a>
+      <a href="#pilares">IA/ML e gestão</a>
+      <a href="#monetizacao">Monetização</a>
       <a href="#blink">Blink</a>
       <a href="#shhhift">shhhift</a>
       <a href="#vilalume">Vilalume</a>
       <a href="#precofeito">Preço Feito</a>
       <a href="#sobre">Sobre</a>
     </nav>
+    <button class="theme" id="themeBtn" type="button" aria-label="Alternar entre modo escuro e claro">☾ escuro</button>
   </div>
 </header>
 
@@ -137,9 +178,10 @@ footer a{margin-right:16px}
 
 <section class="hero">
   <div class="wrap">
-    <div class="eyebrow">Portfólio de produtos</div>
-    <h1>Quatro produtos. Quatro problemas do dia a dia.</h1>
-    <p class="lead">Pessoas que não se encontram, playlists que dão trabalho, times espalhados entre dezenas de ferramentas e donos de bar que não sabem quanto custa o próprio prato. Cada produto aqui nasceu de uma dessas frustrações e foi construído de ponta a ponta com o Claude: da ideia e da marca até o site no ar.</p>
+    <div class="eyebrow">§ 00 · Head of Data &amp; Analytics</div>
+    <h1>Dados, IA e <em>produtos</em>.</h1>
+    <p class="formula">f(dados) = decisão</p>
+    <p class="lead">Mais de 13 anos ligando dado a decisão, com duas frentes fortes, IA/ML e gestão, e uma plataforma de monetização de dados que gerou R$ 45 mi em receita incremental. Fora do expediente, quatro produtos: pessoas que não se encontram, playlists que dão trabalho, times espalhados entre dezenas de ferramentas e donos de bar que não sabem quanto custa o próprio prato. Cada um nasceu de uma dessas frustrações e foi construído de ponta a ponta com o Claude: da ideia e da marca até o site no ar.</p>
     <div class="chips">
       <a class="chip" href="#blink"><b><i class="dot" style="background:#FF6B9A"></i>Blink</b><span>Conheça quem está no mesmo lugar que você</span></a>
       <a class="chip" href="#shhhift"><b><i class="dot" style="background:#5EEAD4"></i>shhhift</b><span>Playlists prontas no Spotify e YouTube Music</span></a>
@@ -196,7 +238,7 @@ footer a{margin-right:16px}
         <li>
           <span class="when">Ago/2020 a abr/2023</span>
           <h4>Grupo Carrefour Brasil · Data Scientist Consultant e Data Science Manager</h4>
-          <p>Liderei do zero uma <b>plataforma de monetização de dados</b> para os times de Media Trading e CRM: <b>R$ 45 mi em receita incremental em menos de 60 dias</b>, fechamento e execução de campanhas <b>7x mais rápidos</b> e resultados de campanha <b>até 5x melhores</b> com Machine Learning. Antes, no programa de fidelidade, desenvolvi modelos de propensão por categoria de produto e integrei o Nutri-Score a uma matriz de similaridade de produtos.</p>
+          <p>Fui cofundador da DataBank e liderei do zero uma <b>plataforma de monetização de dados</b> (veja a <a href="#monetizacao" style="text-decoration:underline">seção de monetização</a>) para os times de Media Trading e CRM: <b>R$ 45 mi em receita incremental em menos de 60 dias</b>, fechamento e execução de campanhas <b>7x mais rápidos</b> e resultados de campanha <b>até 5x melhores</b> com Machine Learning. Antes, no programa de fidelidade, desenvolvi modelos de propensão por categoria de produto e integrei o Nutri-Score a uma matriz de similaridade de produtos.</p>
         </li>
         <li>
           <span class="when">Mar/2018 a ago/2020</span>
@@ -241,7 +283,91 @@ footer a{margin-right:16px}
   </div>
 </section>
 
-<div class="wrap" style="margin-top:36px"><div class="eyebrow">Os produtos</div></div>
+<!-- ============ PILARES ============ -->
+<section class="pilares" id="pilares">
+  <div class="wrap">
+    <div class="qsec" style="margin-top:36px">
+      <h3>Duas frentes</h3>
+      <h2>IA/ML e gestão, no mesmo plano.</h2>
+      <p class="big">Modelo sem time que o sustente não chega à produção, e time sem rigor técnico não entrega impacto mensurável. Trabalho nas duas pontas: construir os modelos e a plataforma, e organizar pessoas, prioridades e governança em volta deles.</p>
+      <div class="pgrid">
+        <div class="pcard">
+          <div class="k">Pilar 01</div>
+          <h3>IA e Machine Learning</h3>
+          <p style="color:var(--muted);margin:0">Formação em Matemática e mais de uma década de ML aplicado, do risco de crédito à IA generativa.</p>
+          <ul>
+            <li><b>Modelos de propensão e NBA/NBO:</b> propensão por categoria de produto, Next Best Action na Smiles e caminho para Next Best Offer.</li>
+            <li><b>Inferência causal na prática:</b> grupos de controle e holdout para medir incrementalidade, e proposta de o time de D&amp;A gerir os controles dos modelos de propensão.</li>
+            <li><b>Risco e classificação:</b> behavior score em Random Forest sobre Hadoop, PD de financiamento de veículos, detratores de NPS e suas causas.</li>
+            <li><b>NLP:</b> drivers de satisfação extraídos de texto livre dos clientes.</li>
+            <li><b>Similaridade de produtos:</b> matriz de similaridade integrando o Nutri-Score.</li>
+            <li><b>IA generativa:</b> sistemas multiagente com LangGraph e MCP, e chats conversacionais para coletar insights em dados, como o SmilesGPT.</li>
+          </ul>
+        </div>
+        <div class="pcard">
+          <div class="k">Pilar 02</div>
+          <h3>Gestão de dados e de times</h3>
+          <p style="color:var(--muted);margin:0">Lidero 14 pessoas, com 2 coordenadores diretos, e a função de Data &amp; Analytics da Smiles.</p>
+          <ul>
+            <li><b>Plataforma de dados:</b> arquitetura medallion (Bronze, Silver e Gold), stack Databricks e governança com Unity Catalog.</li>
+            <li><b>Roadmap e prioridades:</b> alinhamento com CRM, Vitrines e Produto, ligando a agenda de analytics às metas do negócio.</li>
+            <li><b>Maturidade analítica:</b> cultura data-driven, com decisões medidas por incrementalidade e não por volume de campanha.</li>
+            <li><b>Desenvolvimento de pessoas:</b> time organizado por frentes, com coordenação direta e foco em colaboração.</li>
+            <li><b>Governança:</b> dono dos grupos de controle, dos modelos e dos dados que sustentam as decisões.</li>
+            <li><b>Liderança de ponta a ponta:</b> do Data Scientist ao Head, passando por gerência de Data Science e de BI.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MONETIZAÇÃO DE DADOS ============ -->
+<section class="pilares" id="monetizacao">
+  <div class="wrap">
+    <div class="qsec" style="margin-top:36px">
+      <h3>Monetização de dados</h3>
+      <h2>DataBank e o algoritmo Gutenberg.</h2>
+      <p class="big">Fui cofundador da DataBank, startup que transformou dados históricos de compras do varejo em receita incremental, por meio de retail media e de ativações em canais próprios de CRM. Em 2022 ela foi reconhecida no Innovation Challenge do Tech for Retail, em Paris.</p>
+      <div class="stats" style="margin-top:18px">
+        <div class="stat"><b>R$ 45 mi</b><span>receita incremental em menos de 60 dias</span></div>
+        <div class="stat"><b>7x</b><span>mais rapidez para fechar e executar campanhas</span></div>
+        <div class="stat"><b>até 5x</b><span>melhores resultados de campanha com ML</span></div>
+      </div>
+
+      <h3 style="margin-top:36px">Como o produto funciona</h3>
+      <div class="flow">
+        <div class="st"><b>Dados de compra</b><span>Histórico de compras dos clientes como matéria-prima.</span></div>
+        <div class="st"><b>Modelo de propensão</b><span>O Gutenberg estima quem tem maior probabilidade de comprar cada produto ou categoria.</span></div>
+        <div class="st"><b>Segmentação</b><span>Públicos ranqueados por propensão, prontos para o anunciante ou para o CRM.</span></div>
+        <div class="st"><b>Ativação</b><span>Campanhas nos canais próprios de CRM, com Media Trading e CRM no mesmo fluxo.</span></div>
+        <div class="st"><b>Medição</b><span>Resultado comparado a um grupo de controle que não foi abordado.</span></div>
+      </div>
+
+      <div class="eq">
+        <div class="math">incrementalidade = ȳ<sub>abordados</sub> − ȳ<sub>controle</sub></div>
+        <p>Só conta como receita da plataforma o que excede o que o grupo de controle, sem contato, já compraria. É isso que separa monetização de dados de atribuição inflada.</p>
+      </div>
+
+      <h3 style="margin-top:36px">Para quem criamos valor</h3>
+      <div class="cols">
+        <div class="box"><h4>Para o varejista</h4><p>Nova linha de receita a partir de um ativo que já existe: os dados de compra dos próprios clientes.</p></div>
+        <div class="box"><h4>Para a indústria e o anunciante</h4><p>Mídia que chega a quem tem maior propensão de compra, com resultado medido contra um grupo de controle.</p></div>
+        <div class="box"><h4>Para o cliente final</h4><p>Ofertas mais relevantes nos canais que ele já usa, em vez de comunicação em massa.</p></div>
+      </div>
+
+      <div class="callout">
+        <p><b>O reconhecimento em Paris.</b> A edição de 2022 do Tech for Retail, em Paris, foi tema de coluna de Charles Schweitzer, diretor superintendente de Inovação &amp; Cultura do Banco Carrefour, na Época Negócios (01/12/2022). A coluna destaca que a startup brasileira DataBank, com seu algoritmo Gutenberg, venceu o Innovation Challenge do evento.</p>
+        <p><a href="https://epocanegocios.globo.com/google/amp/colunas/coluna/2022/12/tech-for-retail-cresce-com-a-ambicao-de-colocar-paris-na-rota-dos-grandes-eventos-de-negocios.ghtml" target="_blank" rel="noopener">Ler a coluna na Época Negócios →</a></p>
+      </div>
+
+      <h3 style="margin-top:36px">O que aconteceu depois</h3>
+      <p class="big">A plataforma e o produto foram incorporados à estratégia interna do Carrefour, e a DataBank foi encerrada em 2023. A lição que levei: dado vira dinheiro quando há modelo, ativação e medição de incrementalidade funcionando juntos. É o mesmo princípio que hoje aplico na Smiles.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap" style="margin-top:36px"><div class="eyebrow">§ 04 · Os produtos</div></div>
 
 <!-- ============ BLINK ============ -->
 <section class="prod" id="blink">
@@ -589,5 +715,13 @@ footer a{margin-right:16px}
   </div>
 </footer>
 
+<script>
+(function(){
+  var b=document.getElementById('themeBtn'),r=document.documentElement;
+  function sync(){var d=r.getAttribute('data-theme')!=='light';b.textContent=d?'☾ escuro':'☀ claro';b.setAttribute('aria-pressed',String(!d));}
+  b.addEventListener('click',function(){var n=r.getAttribute('data-theme')==='light'?'dark':'light';r.setAttribute('data-theme',n);try{localStorage.setItem('rc-theme',n);}catch(e){}sync();});
+  sync();
+})();
+</script>
 </body>
 </html>
