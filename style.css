@@ -266,3 +266,7 @@ h3.sub{margin-top:48px}
 .hub .hh>img{height:60px}
 .hub .hh>img{align-self:flex-start;width:auto}
 .hub.vilalume .hh>img{height:84px;margin:-12px 0 -12px -6px}
+.hub .hlogo img{max-width:none}
+.hub.preco .hlogo img{height:56px;width:auto}
+.about{padding-top:88px}
+.head .logo[src*="precofeito"]{height:56px!important;max-width:none}
