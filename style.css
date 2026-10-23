@@ -270,3 +270,13 @@ h3.sub{margin-top:48px}
 .hub.preco .hlogo img{height:56px;width:auto}
 .about{padding-top:88px}
 .head .logo[src*="precofeito"]{height:56px!important;max-width:none}
+
+.duo{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px;align-items:center}
+.duo .big{max-width:none}
+.foto{margin:0}
+.foto img{width:100%;height:auto;display:block;border-radius:20px;border:1.5px solid var(--line)}
+.foto figcaption{font-family:'Fira Code',monospace;font-size:12px;color:var(--muted);margin-top:10px;line-height:1.5}
+@media (max-width:860px){.duo{grid-template-columns:1fr;gap:24px}}
+.duo h3{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;font-family:'Fira Code',monospace}
+.duo h2{font-size:clamp(28px,3.8vw,40px);font-weight:800;letter-spacing:-.03em;margin-bottom:18px;max-width:20ch}
+.duo .links{margin-top:20px}
