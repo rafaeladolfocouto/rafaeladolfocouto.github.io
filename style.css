@@ -195,3 +195,71 @@ details.more .tl{margin:4px 0 16px 6px}
 .hub .hb{padding:22px 26px 26px;display:flex;flex-direction:column;gap:16px;flex:1}
 .hub .hb p{margin:0;color:var(--muted);font-size:16px;flex:1}
 .hub .hb .go{align-self:flex-start;font-style:normal;font-weight:700;font-size:14px;padding:9px 16px;border-radius:10px;background:var(--accent);color:var(--onaccent)}
+
+/* ===== polimento: escala, espaçamento e consistência ===== */
+.wrap{padding:0 24px}
+.crumb{padding-top:32px}
+.tldr{margin:20px 0 8px}
+.tldr p{font-size:18px;line-height:1.55}
+.hero{padding:88px 0 56px}
+.qsec{margin-top:72px}
+.qsec>h2{font-size:clamp(28px,3.8vw,40px);margin-bottom:18px;max-width:26ch}
+.qsec>h3,.sec h3{font-size:12px;letter-spacing:.16em}
+.qsec .big,.sec .big{font-size:18px;line-height:1.65}
+.cols{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px}
+.box{padding:22px;border-radius:18px}
+.box h4{font-size:18px;margin-bottom:8px}
+.stats{gap:14px}
+.stat{padding:20px}
+.pgrid{grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:20px}
+.pcard{padding:30px}
+.pcard h3{font-size:30px}
+.flow{grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:12px}
+.next{margin:72px 0 16px}
+footer{margin-top:56px}
+.prod{padding:28px 0 0}
+.head{padding:44px 36px 40px}
+.head .logo{height:48px;margin:0 0 22px;width:auto;max-width:220px;object-fit:contain;object-position:left}
+.head h2{margin:18px 0 12px}
+.body{padding:40px 36px 48px;gap:44px}
+.shots,.vs{gap:16px}
+.idcard{gap:40px;margin-top:32px}
+.idlogo{padding:40px 28px}
+
+/* caixas de produto */
+.hub .hh{min-height:150px;padding:32px 30px}
+.hub .hh img{height:52px;max-width:85%}
+.hub .hlogo{display:flex;align-items:center;gap:14px}
+.hub .hlogo img{height:52px;width:auto;max-width:60px}
+.hub .hlogo b{font-family:'Outfit',sans-serif;font-size:34px;font-weight:700;letter-spacing:-.03em}
+.hub .hb{padding:24px 30px 30px}
+.hub .hb p{font-size:16px;line-height:1.6}
+
+@media (max-width:760px){
+  .top .wrap{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:6px;row-gap:4px}
+  .top nav{order:3;width:100%;padding-bottom:6px}
+  .hero{padding:56px 0 40px}
+  .qsec{margin-top:56px}
+  .head{padding:32px 22px 30px}
+  .body{padding:30px 22px 36px;gap:36px}
+  .pcard{padding:24px}
+  .idcard{grid-template-columns:1fr;gap:24px}
+  .idlogo{display:grid;grid-template-columns:130px 1fr;align-items:center;gap:6px 22px;text-align:left;padding:24px}
+  .idlogo svg{grid-row:1/4;width:130px;margin:0}
+  .idname{font-size:34px}
+  .idtag{margin-top:6px;font-size:19px}
+  .idfull{grid-column:2;margin-top:6px;font-size:11px}
+  .hub .hh{min-height:130px;padding:26px 24px}
+  .hub .hb{padding:20px 24px 24px}
+  .next{margin-top:56px}
+}
+@media (max-width:420px){
+  .idlogo{grid-template-columns:96px 1fr}
+  .idlogo svg{width:96px}
+  .idname{font-size:28px}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat b{font-size:24px}
+}
+.stat span{font-size:13px;line-height:1.45;display:block;margin-top:4px}
+.stat b{white-space:nowrap}
+h3.sub{margin-top:48px}
