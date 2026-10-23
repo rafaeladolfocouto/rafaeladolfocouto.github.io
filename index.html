@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rafael Couto · Dados, IA e produtos</title>
+<meta name="description" content="Head de Data & Analytics e construtor de produtos digitais: quem sou, o que fiz e quatro produtos próprios (Blink, shhhift, Vilalume e Preço Feito).">
+<meta property="og:title" content="Rafael Couto · Portfólio de produtos">
+<meta property="og:description" content="Blink, shhhift, Vilalume e Preço Feito: quatro produtos, quatro problemas do dia a dia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAFAF7; --ink:#14161A; --muted:#566070; --line:#E4E6EA; --card:#FFFFFF;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#0F1114; --ink:#F2F3F5; --muted:#9AA3B0; --line:#262B33; --card:#171A1F;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Manrope',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:'Poppins','Manrope',sans-serif;line-height:1.15;margin:0}
+p{margin:0 0 14px}
+
+/* topo */
+.top{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:12px}
+.brand{font-family:'Poppins';font-weight:700;text-decoration:none;white-space:nowrap}
+.top nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.top nav a{font-size:14px;font-weight:600;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px;white-space:nowrap}
+.top nav a:hover{color:var(--ink);background:var(--line)}
+
+/* hero */
+.hero{padding:72px 0 48px}
+.eyebrow{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.hero h1{font-size:clamp(34px,6vw,60px);font-weight:800;letter-spacing:-.03em;max-width:15ch}
+.hero .lead{font-size:clamp(17px,2.2vw,20px);color:var(--muted);max-width:60ch;margin-top:20px}
+.chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:36px}
+.chip{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;transition:transform .15s,border-color .15s}
+.chip:hover{transform:translateY(-2px);border-color:var(--ink)}
+.chip b{display:block;font-family:'Poppins';font-size:18px}
+.chip span{font-size:14px;color:var(--muted)}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px;vertical-align:1px}
+
+/* produto */
+.prod{padding:36px 0}
+.card{border-radius:28px;overflow:hidden;border:1px solid var(--line);background:var(--card)}
+.head{padding:40px 28px 36px;background:var(--hbg);color:var(--hfg)}
+.head .tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:5px 11px;border-radius:99px;background:var(--accent);color:var(--onaccent)}
+.head h2{font-size:clamp(32px,5vw,48px);font-weight:800;letter-spacing:-.02em;margin:16px 0 10px}
+.head p{font-size:18px;max-width:58ch;opacity:.88;margin:0}
+.head .logo{height:34px;margin-bottom:6px;display:block}
+.cta{display:inline-flex;align-items:center;gap:8px;margin-top:22px;padding:12px 20px;border-radius:12px;background:var(--accent);color:var(--onaccent);font-weight:700;text-decoration:none}
+.cta:hover{filter:brightness(1.08)}
+.cta.ghost{background:transparent;color:var(--hfg);border:1px solid color-mix(in srgb,var(--hfg) 35%,transparent);margin-left:8px}
+.body{padding:32px 28px 40px;display:grid;gap:36px}
+.sec h3{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.sec .big{font-size:19px;line-height:1.55;max-width:66ch}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.box{border:1px solid var(--line);border-radius:16px;padding:18px;background:var(--bg)}
+.box h4{margin:0 0 6px;font-size:16px;font-family:'Poppins'}
+.box p{margin:0;color:var(--muted);font-size:15px}
+.box .n{font-family:'Poppins';font-weight:800;font-size:13px;color:var(--ink);background:var(--accent);color:var(--onaccent);width:28px;height:28px;border-radius:50%;display:grid;place-items:center;margin-bottom:12px}
+.vs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.vs ul{margin:0;padding:0;list-style:none}
+.vs li{padding:8px 0 8px 26px;position:relative;font-size:15px;border-bottom:1px solid var(--line)}
+.vs li:last-child{border:0}
+.vs .old li::before{content:"✕";position:absolute;left:0;color:#C2452D;font-weight:800}
+.vs .new li::before{content:"✓";position:absolute;left:0;color:#1B8A5A;font-weight:800}
+.vs h4{margin:0 0 6px;font-family:'Poppins';font-size:16px}
+.list{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.list li{padding-left:24px;position:relative}
+.list li::before{content:"";position:absolute;left:0;top:.6em;width:10px;height:10px;border-radius:3px;background:var(--accent)}
+.list b{font-weight:700}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.shots img{width:100%;border-radius:14px;border:1px solid var(--line);display:block}
+.meta{display:flex;flex-wrap:wrap;gap:8px}
+.pill{font-size:13px;font-weight:600;padding:6px 12px;border-radius:99px;border:1px solid var(--line);color:var(--muted)}
+
+/* temas por produto */
+.blink{--hbg:#120F2D;--hfg:#fff;--accent:#FF6B9A;--onaccent:#120F2D}
+.shhhift{--hbg:#070707;--hfg:#F2F2F2;--accent:#5EEAD4;--onaccent:#070707}
+.vilalume{--hbg:#14112B;--hfg:#fff;--accent:#6D4AFF;--onaccent:#fff}
+.vilalume .head{background:linear-gradient(135deg,#14112B 0%,#2a1f6b 60%,#1a6f94 130%)}
+.preco{--hbg:#0B6B4F;--hfg:#F5F6F1;--accent:#C8F05A;--onaccent:#13201B}
+
+/* quem sou */
+.quem{padding:24px 0 12px}
+.quem .intro{display:grid;gap:28px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.stat{border:1px solid var(--line);background:var(--card);border-radius:16px;padding:16px 18px}
+.stat b{display:block;font-family:'Poppins';font-size:clamp(26px,4vw,34px);font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.stat span{font-size:14px;color:var(--muted)}
+.qsec{margin-top:44px}
+.qsec>h3{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.qsec>h2{font-size:clamp(24px,3.6vw,34px);font-weight:800;letter-spacing:-.02em;margin-bottom:16px;max-width:24ch}
+.qsec .big{font-size:19px;line-height:1.55;max-width:66ch}
+.tl{border-left:2px solid var(--line);margin:8px 0 0 6px;padding:0 0 0 24px;list-style:none;display:grid;gap:24px}
+.tl li{position:relative}
+.tl li::before{content:"";position:absolute;left:-32px;top:.4em;width:12px;height:12px;border-radius:50%;background:var(--ink);border:2px solid var(--bg)}
+.tl .when{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.tl h4{margin:2px 0 6px;font-family:'Poppins';font-size:18px}
+.tl p{margin:0;color:var(--muted);font-size:15px;max-width:64ch}
+.tl p b{color:var(--ink)}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.links a{display:inline-flex;padding:10px 16px;border-radius:12px;border:1px solid var(--line);background:var(--card);font-weight:700;text-decoration:none;font-size:15px}
+.links a:hover{border-color:var(--ink)}
+
+/* fim */
+.about{padding:48px 0 24px}
+.about .box{background:var(--card)}
+footer{padding:40px 0 64px;color:var(--muted);font-size:14px;border-top:1px solid var(--line);margin-top:40px}
+footer a{margin-right:16px}
+@media (max-width:560px){.head{padding:32px 20px}.body{padding:28px 20px 32px}.cta.ghost{margin:10px 0 0}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#topo">Rafael Couto</a>
+    <nav>
+      <a href="#quem">Quem sou</a>
+      <a href="#blink">Blink</a>
+      <a href="#shhhift">shhhift</a>
+      <a href="#vilalume">Vilalume</a>
+      <a href="#precofeito">Preço Feito</a>
+      <a href="#sobre">Sobre</a>
+    </nav>
+  </div>
+</header>
+
+<main id="topo">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Portfólio de produtos</div>
+    <h1>Quatro produtos. Quatro problemas do dia a dia.</h1>
+    <p class="lead">Pessoas que não se encontram, playlists que dão trabalho, times espalhados entre dezenas de ferramentas e donos de bar que não sabem quanto custa o próprio prato. Cada produto aqui nasceu de uma dessas frustrações e foi construído de ponta a ponta com o Claude: da ideia e da marca até o site no ar.</p>
+    <div class="chips">
+      <a class="chip" href="#blink"><b><i class="dot" style="background:#FF6B9A"></i>Blink</b><span>Conheça quem está no mesmo lugar que você</span></a>
+      <a class="chip" href="#shhhift"><b><i class="dot" style="background:#5EEAD4"></i>shhhift</b><span>Playlists prontas no Spotify e YouTube Music</span></a>
+      <a class="chip" href="#vilalume"><b><i class="dot" style="background:#6D4AFF"></i>Vilalume</b><span>Escritório virtual com uma secretária de IA</span></a>
+      <a class="chip" href="#precofeito"><b><i class="dot" style="background:#C8F05A"></i>Preço Feito</b><span>O menor preço que cada item pode ter sem prejuízo</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUEM SOU ============ -->
+<section class="quem" id="quem">
+  <div class="wrap">
+
+    <div class="intro">
+      <div>
+        <div class="eyebrow">Quem sou eu</div>
+        <h2 style="font-size:clamp(28px,4.4vw,42px);font-weight:800;letter-spacing:-.02em;max-width:22ch">Rafael Adolfo de Oliveira Couto</h2>
+        <p class="lead" style="font-size:clamp(17px,2.2vw,20px);color:var(--muted);max-width:64ch;margin-top:14px">Executivo de dados com mais de 13 anos transformando dados em vantagem competitiva: estratégia, governança, plataforma, ciência de dados e IA aplicada ao negócio. Formado em Matemática, com passagem por bancos e varejo, e hoje Head de Data &amp; Analytics da Smiles, o programa de fidelidade da Gol Linhas Aéreas. Nas horas vagas, construo produtos digitais próprios, e é deles que trata o resto desta página.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>13+</b><span>anos com dados</span></div>
+        <div class="stat"><b>14</b><span>pessoas no time que lidero</span></div>
+        <div class="stat"><b>R$ 45 mi</b><span>de receita incremental em menos de 60 dias</span></div>
+        <div class="stat"><b>4</b><span>produtos próprios no ar</span></div>
+      </div>
+    </div>
+
+    <div class="qsec">
+      <h3>O que eu faço</h3>
+      <h2>Ligo estratégia de dados às prioridades do negócio.</h2>
+      <p class="big">Lidero a área de Data &amp; Analytics da Smiles, com um time de 14 pessoas (incluindo 2 coordenadores diretos), organizado em torno de duas frentes:</p>
+      <div class="cols" style="margin-top:14px">
+        <div class="box"><h4>Plataforma de dados</h4><p>Modernização e unificação da plataforma: arquitetura medallion (Bronze, Silver e Gold), stack Databricks e governança com Unity Catalog.</p></div>
+        <div class="box"><h4>Produtos de dados com IA generativa</h4><p>Sistemas multiagente (LangGraph e MCP), chats conversacionais para coletar insights em dados, como o SmilesGPT, e aplicações de apoio ao desenvolvimento ágil de soluções digitais.</p></div>
+        <div class="box"><h4>Propensão e personalização</h4><p>Modelos de propensão e a criação do NBA (Next Best Action), incluindo a gestão de grupos de controle que viabiliza a evolução para um motor de Next Best Offer (NBO).</p></div>
+      </div>
+      <p style="margin-top:16px;color:var(--muted)">No dia a dia: defino prioridades, alinho stakeholders (CRM, Vitrines e Produto), evoluo o roadmap de analytics, elevo a maturidade analítica e desenvolvo o time para uma cultura data-driven, focada em colaboração e impacto de negócio.</p>
+    </div>
+
+    <div class="qsec">
+      <h3>O que eu fiz</h3>
+      <h2>Da prevenção à fraude à liderança de dados.</h2>
+      <ul class="tl">
+        <li>
+          <span class="when">Nov/2023 até hoje</span>
+          <h4>Smiles · Head of Data &amp; Analytics</h4>
+          <p>Comando da função de dados, com as frentes de plataforma, IA generativa e modelos de propensão descritas acima.</p>
+        </li>
+        <li>
+          <span class="when">Abr/2023 a out/2023</span>
+          <h4>Banco Carrefour · Data &amp; Business Intelligence Manager</h4>
+          <p>Assumi a gestão de Dados e BI do banco, dando continuidade à trajetória de liderança de dados construída no Grupo Carrefour Brasil.</p>
+        </li>
+        <li>
+          <span class="when">Ago/2020 a abr/2023</span>
+          <h4>Grupo Carrefour Brasil · Data Scientist Consultant e Data Science Manager</h4>
+          <p>Liderei do zero uma <b>plataforma de monetização de dados</b> para os times de Media Trading e CRM: <b>R$ 45 mi em receita incremental em menos de 60 dias</b>, fechamento e execução de campanhas <b>7x mais rápidos</b> e resultados de campanha <b>até 5x melhores</b> com Machine Learning. Antes, no programa de fidelidade, desenvolvi modelos de propensão por categoria de produto e integrei o Nutri-Score a uma matriz de similaridade de produtos.</p>
+        </li>
+        <li>
+          <span class="when">Mar/2018 a ago/2020</span>
+          <h4>Santander Brasil · Senior Data Scientist (NPS) e Senior Analyst (CRM PJ)</h4>
+          <p>Responsável pela medição oficial do NPS da organização inteira. Construí modelos de classificação para prever detratores e suas causas de insatisfação, e modelos de NLP para entender os drivers de satisfação a partir do texto livre dos clientes. Depois, atuei em CRM para o segmento empresarial.</p>
+        </li>
+        <li>
+          <span class="when">Abr/2016 a mar/2018</span>
+          <h4>Evalueserve (Chile) · Senior Marketing Analyst</h4>
+          <p>Dois anos morando no Chile como consultor analítico para um dos três maiores bancos dos EUA, em Digital Sales &amp; Marketing Analytics. Fui responsável pela visualização em Tableau de todo o fluxo de campanhas digitais e dei aulas de Estatística e Tableau para recém-formados, em parceria com universidades chilenas.</p>
+        </li>
+        <li>
+          <span class="when">Fev/2011 a mar/2016</span>
+          <h4>Itaú Unibanco · Prevenção à fraude, modelagem de crédito e telemetria</h4>
+          <p>Comecei a carreira em prevenção à fraude, com políticas para transações de cartão não presente (CNP). Passei por modelagem de crédito, com um modelo de behavior score em Random Forest sobre Hadoop e o modelo de PD (probabilidade de inadimplência) do financiamento de veículos, e por telemetria, com dashboards do ciclo de crédito de veículos e imóveis.</p>
+        </li>
+      </ul>
+      <div class="meta" style="margin-top:22px">
+        <span class="pill">Matemática · Universidade Presbiteriana Mackenzie</span>
+        <span class="pill">Diplomado em Big Data y Data Science · PUC de Valparaíso</span>
+        <span class="pill">Português nativo · Inglês e Espanhol profissionais plenos</span>
+      </div>
+    </div>
+
+    <div class="qsec">
+      <h3>Por que eu fiz</h3>
+      <h2>Dados só valem quando mudam uma decisão.</h2>
+      <p class="big">Em todas as empresas por onde passei a pergunta foi a mesma: como transformar dados em dinheiro, em experiência melhor ou em uma decisão mais segura. Na fraude e no crédito, era o risco. No NPS e no CRM, o cliente. No varejo, a monetização. Na Smiles, a plataforma e a IA que dão escala a tudo isso. Para mim, dado é um ativo estratégico de crescimento, e o trabalho é sempre o mesmo: ligar o que se sabe ao que se decide.</p>
+      <p class="big" style="margin-top:14px">Os quatro produtos desta página são a mesma pergunta aplicada fora do trabalho, e com um ingrediente a mais: construir tudo de ponta a ponta, da ideia e da marca ao produto no ar. Cada um nasceu de um problema comum que me incomodava e que parecia mal resolvido: gente no mesmo lugar sem se conhecer (Blink), playlists que dão trabalho demais (shhhift), times espalhados entre ferramentas (Vilalume) e quem vende comida sem saber o preço mínimo do próprio prato (Preço Feito). É também a forma que encontrei de continuar perto de produto, de código e de IA generativa, usando na prática o que estudo e levo para o meu time.</p>
+      <p style="margin-top:14px;color:var(--muted);font-size:15px">Os projetos pessoais são independentes do meu trabalho na Smiles.</p>
+    </div>
+
+    <div class="qsec">
+      <h3>Vamos conversar</h3>
+      <p>Estou sempre aberto a boas conversas sobre dados, IA, plataforma, governança ou liderança: trocar ideias, discutir tendências de mercado ou conhecer desafios de empresas digitais e instituições financeiras que tratam dados como ativo estratégico de crescimento.</p>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/rafaeladolfocouto" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:rafaeladolfocouto@gmail.com">rafaeladolfocouto@gmail.com</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="wrap" style="margin-top:36px"><div class="eyebrow">Os produtos</div></div>
+
+<!-- ============ BLINK ============ -->
+<section class="prod" id="blink">
+  <div class="wrap">
+    <article class="card blink">
+      <div class="head">
+        <img class="logo" src="https://appblink.com.br/logo-dark.png" alt="Blink" onerror="this.style.display='none'">
+        <span class="tag">App · Encontros presenciais</span>
+        <h2>Blink</h2>
+        <p>Faça check-in no bar, na festa ou no evento e veja quem está no mesmo lugar e aberto a conhecer gente. Agora, não daqui a três semanas de conversa.</p>
+        <a class="cta" href="https://appblink.com.br" target="_blank" rel="noopener">Visitar appblink.com.br →</a>
+      </div>
+      <div class="body">
+
+        <div class="sec">
+          <h3>O problema</h3>
+          <p class="big">Os apps de relacionamento mostram gente a quilômetros, que você talvez nunca encontre. Entre o match e o primeiro encontro costumam passar semanas de conversa, e no meio do caminho aparecem fotos antigas, perfis falsos e o cansaço de arrastar para o lado sem fim. Enquanto isso, a pessoa certa pode estar a dois metros de você, no mesmo bar, sem que ninguém dê o primeiro passo.</p>
+        </div>
+
+        <div class="sec">
+          <h3>Os apps de sempre × o Blink</h3>
+          <div class="vs">
+            <div class="box old"><h4>Apps de sempre</h4><ul>
+              <li>Gente a 30 km, que você nunca vai cruzar</li>
+              <li>Semanas de conversa até marcar um encontro</li>
+              <li>Fotos antigas e perfis que não batem com a realidade</li>
+              <li>Arrastar para o lado sem fim</li>
+            </ul></div>
+            <div class="box new"><h4>Com o Blink</h4><ul>
+              <li>Só quem está no mesmo rolê, agora</li>
+              <li>Deu Blink, é só ir lá dar um oi</li>
+              <li>Selfie da noite, tirada no local, na hora</li>
+              <li>Poucas pessoas, todas reais e por perto</li>
+            </ul></div>
+          </div>
+        </div>
+
+        <div class="sec">
+          <h3>Como funciona</h3>
+          <div class="cols">
+            <div class="box"><div class="n">1</div><h4>Faça check-in</h4><p>Chegou no rolê? Escolha o local na lista ou leia o QR code do balcão e tire a selfie da noite. Ela vale só por hoje.</p></div>
+            <div class="box"><div class="n">2</div><h4>Veja quem está aqui</h4><p>A lista mostra quem está no mesmo lugar e aberto a conhecer gente, com nome, idade, bio e o que cada um procura.</p></div>
+            <div class="box"><div class="n">3</div><h4>Dê um Blink</h4><p>Curtiu alguém? Dê um Blink. Se for dos dois lados, deu Blink: abre a conversa e vocês estão a poucos passos um do outro.</p></div>
+          </div>
+        </div>
+
+        <div class="sec">
+          <h3>Você escolhe o clima</h3>
+          <p>Cada pessoa diz o que procura naquela noite, e só aparece para quem quer a mesma coisa.</p>
+          <div class="cols">
+            <div class="box"><h4>Crush</h4><p>Para paquerar. Aquele olhar do outro lado do balcão agora pode virar conversa, sem chegar no escuro.</p></div>
+            <div class="box"><h4>Resenha</h4><p>Para fazer amigos. Chegou sozinho, mudou de cidade ou quer ampliar a turma? Encontre quem quer trocar ideia.</p></div>
+            <div class="box"><h4>Conexão</h4><p>Para networking. No evento, no coworking ou no happy hour, descubra quem quer trocar contatos e oportunidades.</p></div>
+          </div>
+        </div>
+
+        <div class="sec">
+          <h3>Segurança e privacidade por desenho</h3>
+          <ul class="list">
+            <li><b>Ninguém vê onde você está.</b> As pessoas sabem só que vocês estão no mesmo local; a localização exata nunca aparece.</li>
+            <li><b>Presença verificada.</b> O check-in confere que o celular está mesmo no local, o que dificulta perfis falsos.</li>
+            <li><b>A selfie da noite some.</b> Saiu do local, a foto é apagada. Ela só permanece se virou a foto de um match.</li>
+            <li><b>Invisível quando quiser.</b> Um toque e você sai da lista, sem precisar sair do local.</li>
+            <li><b>Denúncia e bloqueio em um toque,</b> com moderação analisando cada caso. Contas com várias denúncias são suspensas.</li>
+            <li><b>Só maiores de 18 anos,</b> com data de nascimento e selfie tirada na hora, no local.</li>
+            <li><b>Seus dados são seus.</b> Sem venda de dados, sem uso para publicidade, e a exclusão da conta leva segundos.</li>
+          </ul>
+        </div>
+
+        <div class="sec">
+          <h3>Para bares, casas e eventos</h3>
+          <p class="big">O espaço coloca o QR code do Blink no balcão, cria noites Blink e vira o lugar onde as histórias começam. Quem frequenta ganha um motivo para voltar; quem opera ganha um lugar mais animado.</p>
+        </div>
+
+        <div class="sec">
+          <h3>Situação atual</h3>
+          <div class="meta">
+            <span class="pill">Em fase de testes</span>
+            <span class="pill">Começando por São Paulo, bairro por bairro</span>
+            <span class="pill">Gratuito, com 3 Blinks por local a cada noite</span>
+            <span class="pill">Em breve na App Store e no Google Play</span>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ SHHHIFT ============ -->
+<section class="prod" id="shhhift">
+  <div class="wrap">
+    <article class="card shhhift">
+      <div class="head">
+        <img class="logo" src="https://www.shhhift.com.br/logo.svg" alt="shhhift" onerror="this.style.display='none'">
+        <span class="tag">Web app · Música</span>
+        <h2>shhhift</h2>
+        <p>Diga o que quer ouvir e a playlist fica pronta no Spotify ou no YouTube Music. Pelo texto, por uma lista de músicas, por um caminho entre dois artistas ou migrando de uma plataforma para a outra.</p>
+        <a class="cta" href="https://www.shhhift.com.br" target="_blank" rel="noopener">Visitar shhhift.com.br →</a>
+      </div>
+      <div class="body">
+
+        <div class="sec">
+          <h3>O problema</h3>
+          <p class="big">Todo mundo sabe o clima que quer, mas poucos têm paciência de transformar isso em 20 músicas escolhidas, buscadas e organizadas. Quem recebe uma lista de faixas num print ou numa conversa precisa procurar uma por uma. Quem troca de plataforma perde as playlists. E quem quer passar de um estilo a outro costuma dar um salto brusco que quebra o clima.</p>
+        </div>
+
+        <div class="sec">
+          <h3>Quatro jeitos de usar</h3>
+          <div class="cols">
+            <div class="box"><div class="n">1</div><h4>Pedido</h4><p>Escreva do seu jeito, como falaria com um amigo: “músicas animadas para o churrasco de domingo com a família”. O shhhift entende estilo, época e momento e devolve uma playlist de 20 músicas.</p></div>
+            <div class="box"><div class="n">2</div><h4>Lista de músicas</h4><p>Cole as músicas do jeito que estiverem, de um print, de uma conversa ou de uma lista antiga. Ele acha cada uma e monta a playlist na ordem da sua lista.</p></div>
+            <div class="box"><div class="n">3</div><h4>shhhift (a transição)</h4><p>Escolha o artista do começo e o do fim. Ele encontra os artistas que ligam um ao outro e faz a troca aos poucos, sem salto perceptível. Shhh + shift: a mudança que ninguém percebe.</p></div>
+            <div class="box"><div class="n">4</div><h4>Migrar</h4><p>Cole o link de uma playlist do Spotify ou do YouTube. Ele encontra as mesmas músicas e cria a playlist na outra plataforma.</p></div>
+          </div>
+        </div>
+
+        <div class="sec">
+          <h3>Exemplo de transição</h3>
+          <p>De João Gilberto a Radiohead, sem sentir o salto:</p>
+          <div class="meta">
+            <span class="pill">João Gilberto · bossa nova</span>→
+            <span class="pill">Caetano Veloso · tropicália</span>→
+            <span class="pill">Os Mutantes · psicodelia</span>→
+            <span class="pill">Tame Impala · rock psicodélico</span>→
+            <span class="pill">Radiohead · art rock</span>
+          </div>
+        </div>
+
+        <div class="sec">
+          <h3>Como funciona na prática</h3>
+          <div class="cols">
+            <div class="box"><div class="n">1</div><h4>Peça</h4><p>Escreva o que quer ouvir, cole uma lista ou escolha dois artistas. Depois escolha Spotify ou YouTube Music.</p></div>
+            <div class="box"><div class="n">2</div><h4>Revise</h4><p>Veja as músicas sugeridas e tire as que não quiser antes de criar a playlist.</p></div>
+            <div class="box"><div class="n">3</div><h4>Ouça</h4><p>Abra o link e salve na sua biblioteca. Ele também fica guardado na aba Playlists do app.</p></div>
+          </div>
+        </div>
+
+        <div class="sec">
+          <h3>Privacidade: nada é criado na sua conta</h3>
+          <ul class="list">
+            <li><b>Sem acesso ao seu Spotify ou Google.</b> As playlists ficam na conta do próprio shhhift em cada plataforma e você recebe só o link.</li>
+            <li><b>Não lê o que você escuta</b> e não mexe na sua biblioteca.</li>
+            <li><b>Seu nome e email não aparecem</b> na playlist. No Spotify ela é pública; no YouTube, não listada e só abre com o link.</li>
+            <li><b>Exclusão de conta</b> a qualquer momento, dentro do app.</li>
+          </ul>
+        </div>
+
+        <div class="sec">
+          <h3>Por dentro</h3>
+          <p class="big">As transições entre artistas usam um modelo de recomendação baseado em grafos, que conecta mais de 100 mil artistas por afinidade. É esse mapa que permite andar de um estilo ao outro por vizinhos próximos, em vez de pular direto.</p>
+        </div>
+
+        <div class="sec">
+          <h3>Situação atual</h3>
+          <div class="meta">
+            <span class="pill">Gratuito, sem cartão</span>
+            <span class="pill">Fase inicial, em testes</span>
+            <span class="pill">Entrada com Google, Apple ou email</span>
+            <span class="pill">Disponível em português, inglês e espanhol</span>
+            <span class="pill">iOS e Android em breve</span>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ VILALUME ============ -->
+<section class="prod" id="vilalume">
+  <div class="wrap">
+    <article class="card vilalume">
+      <div class="head">
+        <img class="logo" src="https://vilalume.com.br/marca/vilalume-horizontal-negativo.svg" alt="Vilalume" onerror="this.style.display='none'">
+        <span class="tag">B2B · Trabalho híbrido</span>
+        <h2>Vilalume</h2>
+        <p>O escritório da sua empresa, com uma secretária para cada pessoa. A <b>Vila</b> junta quem está no escritório e quem está em casa no mesmo mapa. A <b>Lume</b> lê e-mails, agenda e Teams de cada pessoa e diz o que importa hoje.</p>
+        <a class="cta" href="https://vilalume.com.br" target="_blank" rel="noopener">Visitar vilalume.com.br →</a>
+        <a class="cta ghost" href="https://vilalume.com.br/piloto" target="_blank" rel="noopener">Piloto grátis</a>
+      </div>
+      <div class="body">
+
+        <div class="sec">
+          <h3>O problema</h3>
+          <p class="big">O trabalho híbrido trocou o corredor por dezenas de abas. A informação está espalhada entre e-mail, reunião, chat e tarefas, e ninguém sabe ao certo quem está disponível, quem veio ao escritório hoje ou no que o outro está trabalhando. Cada pessoa gasta a manhã triando mensagens para descobrir o que realmente pede resposta. E as soluções de escritório virtual existentes são caras para a realidade de muitas empresas brasileiras.</p>
+        </div>
+
+        <div class="sec">
+          <h3>Duas ofertas, uma plataforma</h3>
+          <div class="cols">
+            <div class="box"><h4>Vila · o lugar</h4><p>Um escritório virtual 2D visto de cima, com salas de reunião, café, foco e baias, e avatares com nome e status. Num dia misto, mostra o andar físico de um lado e a Vila remota do outro.</p></div>
+            <div class="box"><h4>Lume · a luz do dia</h4><p>Uma secretária de IA por pessoa. Lê e-mails, agenda e Teams e entrega o resumo do que importa hoje, o que pode esperar e onde há conflito de agenda.</p></div>
+          </div>
+        </div>
+
+        <div class="sec">
+          <h3>Vila: um lugar para o time, esteja onde estiver</h3>
+          <ul class="list">
+            <li><b>Os dois escritórios na mesma tela.</b> O andar de verdade de um lado, a Vila remota do outro. Dá para ver quem veio hoje e quem está em casa sem perguntar no grupo.</li>
+            <li><b>Check-in, não rastreio.</b> Cada pessoa diz se está no escritório ou remota. Nada de Wi-Fi, GPS ou tempo online.</li>
+            <li><b>Salas com o Teams que vocês já usam.</b> Entrou na sala, entrou na reunião. Clicou num colega, chamou no Teams.</li>
+          </ul>
+        </div>
+
+        <div class="sec">
+          <h3>Lume: uma luz para o dia de cada pessoa</h3>
+          <ul class="list">
+            <li><b>Seu dia, resumido.</b> Antes do primeiro café: o que pede resposta hoje, as reuniões e o que dá para deixar para depois.</li>
+            <li><b>Prioridade de quem conhece o time.</b> A Lume sabe quem é a sua liderança pelo organograma e põe esses pedidos na frente.</li>
+            <li><b>Ela propõe, você decide.</b> A Lume só lê. Nada é enviado, movido ou respondido sem você.</li>
+            <li><b>Proteção de foco.</b> Quando a pessoa está em foco, os avisos não urgentes esperam.</li>
+          </ul>
+        </div>
+
+        <div class="sec">
+          <h3>Na prática</h3>
+          <div class="shots">
+            <img src="https://vilalume.com.br/telas/vila-dia-misto-1600.webp" alt="A Vila num dia misto: escritório físico de São Paulo de um lado, Vila remota do outro, com cards da Lume" loading="lazy" onerror="this.style.display='none'">
+            <img src="https://vilalume.com.br/telas/12-mapa-2d-escritorio-1600.webp" alt="Mapa 2D da Vila visto de cima, com salas, café, foco e baias" loading="lazy" onerror="this.style.display='none'">
+          </div>
+        </div>
+
+        <div class="sec">
+          <h3>Privacidade: cuidar do time, não vigiar o time</h3>
+          <div class="cols">
+            <div class="box"><h4>Só leitura</h4><p>Permissões da Microsoft somente de leitura. A Lume não envia nada.</p></div>
+            <div class="box"><h4>Sem guardar e-mail</h4><p>O texto de e-mails e conversas é lido na hora e descartado. Fica só um resumo curto.</p></div>
+            <div class="box"><h4>Sem ranking</h4><p>Nenhuma métrica individual de produtividade. Os números são sempre do time.</p></div>
+            <div class="box"><h4>Apagado no fim</h4><p>Os dados do piloto são apagados até 7 dias depois. Fica só o relatório agregado.</p></div>
+          </div>
+        </div>
+
+        <div class="sec">
+          <h3>Piloto grátis para times que usam Microsoft 365</h3>
+          <p class="big">Até 20 pessoas, por 1 a 2 semanas. No fim, um relatório do que mudou no time: e-mails triados, horas em reunião e em foco, conflitos de agenda e uma estimativa conservadora de horas economizadas.</p>
+        </div>
+
+        <div class="sec">
+          <h3>Por dentro</h3>
+          <p class="big">A Vila usa um mapa 2D no navegador com presença em tempo real e vídeo por proximidade. A Lume combina leitura via Microsoft Graph com modelos de linguagem da Claude para triagem e rascunhos. Os dois produtos compartilham um núcleo comum (login, organograma, rotina e presença), o que faz de cada um uma oferta independente e, juntos, um ecossistema.</p>
+        </div>
+
+        <div class="sec">
+          <h3>Situação atual</h3>
+          <div class="meta">
+            <span class="pill">Fase de vitrine e pilotos gratuitos</span>
+            <span class="pill">Feito para empresas brasileiras em Microsoft 365</span>
+            <span class="pill">Tour aberto da Vila</span>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ PREÇO FEITO ============ -->
+<section class="prod" id="precofeito">
+  <div class="wrap">
+    <article class="card preco">
+      <div class="head">
+        <img class="logo" src="https://www.precofeito.com/simbolo.svg" alt="Preço Feito" style="height:48px;filter:none" onerror="this.style.display='none'">
+        <span class="tag">SaaS · Alimentação</span>
+        <h2>Preço Feito</h2>
+        <p>O preço que paga a conta. Mande as notas de compra e o cardápio: o Preço Feito mostra o menor preço que cada item pode ter sem dar prejuízo, com a conta aberta. Tudo pelo celular.</p>
+        <a class="cta" href="https://www.precofeito.com" target="_blank" rel="noopener">Visitar precofeito.com →</a>
+      </div>
+      <div class="body">
+
+        <div class="sec">
+          <h3>O problema</h3>
+          <p class="big">Muita gente que vende comida define o preço olhando o vizinho ou no feeling. Poucos sabem quanto custa de verdade o prato que sai da cozinha: o custo dos insumos muda a cada nota, as contas do mês (aluguel, luz, água, gás, internet, funcionários) precisam ser rateadas entre o que se vende, e planilhas dão trabalho e envelhecem rápido. O resultado é vender abaixo do que se deveria sem perceber.</p>
+        </div>
+
+        <div class="sec">
+          <h3>Como funciona</h3>
+          <div class="cols">
+            <div class="box"><div class="n">1</div><h4>Notas</h4><p>Mande as notas fiscais de compra (XML, PDF ou foto do cupom). O Preço Feito separa cada insumo e calcula quanto custa o quilo, o litro ou a unidade. Sem nota, dá para digitar o valor à mão.</p></div>
+            <div class="box"><div class="n">2</div><h4>Cardápio</h4><p>Envie o cardápio ou a lista de produtos em PDF ou foto. A IA sugere quais insumos do seu estoque cada item usa, e monta a ficha técnica para você só conferir.</p></div>
+            <div class="box"><div class="n">3</div><h4>Custos</h4><p>Informe as contas do negócio. A IA divide o custo do mês entre o que você vende, considerando perdas no preparo, embalagem e taxas.</p></div>
+            <div class="box"><div class="n">4</div><h4>Preço</h4><p>Veja o preço mínimo de cada item, o que paga a conta sem prejuízo. Toque em qualquer número e veja a conta inteira, do custo do pão ao aluguel.</p></div>
+          </div>
+        </div>
+
+        <div class="sec">
+          <h3>Por que é diferente</h3>
+          <ul class="list">
+            <li><b>Sem planilha.</b> Você manda o que já tem (notas e cardápio) e o produto organiza o resto.</li>
+            <li><b>A IA faz a parte chata.</b> Ela monta a ficha de cada item e rateia as contas do mês. Você só confere.</li>
+            <li><b>Cada número explicado.</b> Nada de caixa-preta: o preço se refaz na hora quando você muda um custo.</li>
+            <li><b>Feito para quem não tem tempo,</b> pensado para o celular, no ritmo do dia a dia de um bar ou restaurante.</li>
+          </ul>
+        </div>
+
+        <div class="sec">
+          <h3>Para quem é</h3>
+          <div class="cols">
+            <div class="box"><h4>Bares e restaurantes</h4><p>Pratos, porções e drinks com ficha técnica: cada ingrediente da nota entra no custo do prato.</p></div>
+            <div class="box"><h4>Lanchonetes, cafeterias e padarias</h4><p>Lanches, salgados e receitas que rendem várias unidades, com perda no preparo e embalagem na conta.</p></div>
+            <div class="box"><h4>Pequenos varejos de alimentos</h4><p>Mercearias, mercados de bairro, empórios e hortifrútis: custo direto da nota mais a parte das contas da loja.</p></div>
+          </div>
+        </div>
+
+        <div class="sec">
+          <h3>A marca</h3>
+          <p class="big">O nome brinca com “prato feito”, o PF: um preço resolvido, honesto e do dia a dia, na linguagem de quem trabalha no setor. O símbolo é um prato visto de cima com talheres e um check no centro, com o grifo de marca-texto lima. A voz é clara e direta, sem jargão, como em “O X-Salada precisa de pelo menos R$ 22,40 para se pagar”.</p>
+        </div>
+
+        <div class="sec">
+          <h3>Situação atual</h3>
+          <div class="meta">
+            <span class="pill">Piloto gratuito com bares, restaurantes e pequenos varejos</span>
+            <span class="pill">Assinatura mensal planejada após o piloto</span>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ SOBRE ============ -->
+<section class="about" id="sobre">
+  <div class="wrap">
+    <div class="sec">
+      <h3 style="font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px">Sobre estes projetos</h3>
+      <div class="box">
+        <p style="font-size:18px;color:var(--ink)">Os quatro produtos são projetos pessoais, construídos de ponta a ponta nas horas livres: ideia, validação, marca, texto, desenvolvimento e publicação. Cada um tem seu próprio projeto no Claude, com contexto, decisões e marca registrados, o que permite evoluir todos em paralelo sem perder o fio.</p>
+        <p style="margin:0">Quer testar algum deles ou conversar sobre os produtos? Os contatos estão em cada site, e os meus estão na seção <a href="#quem" style="text-decoration:underline">Quem sou</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="https://appblink.com.br" target="_blank" rel="noopener">appblink.com.br</a>
+    <a href="https://www.shhhift.com.br" target="_blank" rel="noopener">shhhift.com.br</a>
+    <a href="https://vilalume.com.br" target="_blank" rel="noopener">vilalume.com.br</a>
+    <a href="https://www.precofeito.com" target="_blank" rel="noopener">precofeito.com</a>
+    <p style="margin-top:16px">© 2026 Rafael Couto. Blink, shhhift, Vilalume e Preço Feito são projetos independentes. O shhhift não é afiliado ao Spotify, ao Google, ao YouTube nem à Apple.</p>
+  </div>
+</footer>
+
+</body>
+</html>
