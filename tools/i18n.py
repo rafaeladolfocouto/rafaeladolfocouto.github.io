@@ -69,18 +69,23 @@ NAVHREF=['index.html','quem-sou.html','ia-gestao.html','monetizacao.html','produ
 NAVKEY={'index':0,'quem-sou':1,'ia-gestao':2,'monetizacao':3,'produtos':4,'blink':4,'shhhift':4,'vilalume':4,'precofeito':4}
 LOGO=re.search(r'<a class="brand"[^>]*>(<svg.*?</svg>)',open(os.path.join(ROOT,'index.html'),encoding='utf-8').read(),re.S).group(1)
 
+FLAGS={
+'pt':'<svg class="flag" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#009C3B"/><path d="M10 2 L18 7 L10 12 L2 7Z" fill="#FFDF00"/><circle cx="10" cy="7" r="3.1" fill="#002776"/><path d="M7.1 6.3 Q10 5.6 12.9 7.5" stroke="#fff" stroke-width=".6" fill="none"/></svg>',
+'en':'<svg class="flag" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><g fill="#B22234"><rect y="0" width="20" height="1.55"/><rect y="3.1" width="20" height="1.55"/><rect y="6.2" width="20" height="1.55"/><rect y="9.3" width="20" height="1.55"/><rect y="12.4" width="20" height="1.6"/></g><rect width="9" height="7.75" fill="#3C3B6E"/><g fill="#fff"><circle cx="2" cy="1.7" r=".5"/><circle cx="4.5" cy="1.7" r=".5"/><circle cx="7" cy="1.7" r=".5"/><circle cx="3.2" cy="3.9" r=".5"/><circle cx="5.8" cy="3.9" r=".5"/><circle cx="2" cy="6" r=".5"/><circle cx="4.5" cy="6" r=".5"/><circle cx="7" cy="6" r=".5"/></g></svg>',
+'es':'<svg class="flag" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#AA151B"/><rect y="3.5" width="20" height="7" fill="#F1BF00"/></svg>'}
 def header(lang,page):
     L=LANG[lang]
     nav=''.join('<a href="%s"%s>%s</a>'%(h,' aria-current="page"' if i==NAVKEY[page] else '',t) for i,(h,t) in enumerate(zip(NAVHREF,L['nav'])))
-    langs=''.join('<a href="%s" lang="%s"%s>%s</a>'%(('../' if l!='pt' else '')+((l+'/') if l not in('pt',) else '')+page+'.html' if False else relpath(lang,l,page),l if l!='pt' else 'pt',' aria-current="true"' if l==lang else '',{'pt':'Português','en':'English','es':'Español'}[l]) for l in ('pt','en','es'))
-    cur=lang.upper()
+    names={'pt':'Português','en':'English','es':'Español'}
+    langs=''.join('<a href="%s" lang="%s"%s>%s<span>%s</span></a>'%(relpath(lang,l,page),l,' aria-current="true"' if l==lang else '',FLAGS[l],names[l]) for l in ('pt','en','es'))
+    cur=FLAGS[lang]+'<span>'+lang.upper()+'</span>'
     return f'''<header class="top">
   <div class="wrap">
     <a class="brand" href="index.html">{LOGO}rafael couto</a>
     <nav aria-label="{L['aria_nav']}">{nav}</nav>
     <div class="ctl">
       <button class="theme" id="themeBtn" type="button" aria-label="{L['aria_theme']}">{L['theme'][0]}</button>
-      <details class="lang" id="langMenu"><summary aria-label="{L['aria_lang']}">🌐 {cur}</summary><div class="langlist">{langs}</div></details>
+      <details class="lang" id="langMenu"><summary aria-label="{L['aria_lang']}">{cur}</summary><div class="langlist">{langs}</div></details>
     </div>
   </div>
 </header>'''
