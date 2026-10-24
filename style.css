@@ -280,3 +280,16 @@ h3.sub{margin-top:48px}
 .duo h3{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;font-family:'Fira Code',monospace}
 .duo h2{font-size:clamp(28px,3.8vw,40px);font-weight:800;letter-spacing:-.03em;margin-bottom:18px;max-width:20ch}
 .duo .links{margin-top:20px}
+
+/* controles do topo: tema e idioma */
+.ctl{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.lang{position:relative}
+.lang summary{list-style:none;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:6px 12px;font:500 13px 'Fira Code',monospace;white-space:nowrap}
+.lang summary::-webkit-details-marker{display:none}
+.lang summary:hover,.lang[open] summary{border-color:var(--amberink)}
+.lang summary:focus-visible{outline:2px solid var(--amberink);outline-offset:2px}
+.langlist{position:absolute;right:0;top:calc(100% + 6px);min-width:150px;border:1.5px solid var(--line);border-radius:14px;background:var(--card);padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.35);z-index:20;display:grid;gap:2px}
+.langlist a{display:block;padding:9px 12px;border-radius:9px;text-decoration:none;font-size:14px;font-weight:600;color:var(--muted)}
+.langlist a:hover{background:var(--line);color:var(--ink)}
+.langlist a[aria-current="true"]{color:var(--ink);background:var(--line)}
+@media (max-width:760px){.top .wrap>.ctl{order:2;margin-left:auto}.top .wrap>.brand{order:1}}

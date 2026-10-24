@@ -11,6 +11,10 @@ Site estático multipágina (HTML, `style.css` e `theme.js`, sem build) para pub
 
 Para usar um repositório com outro nome (por exemplo `portfolio`), o endereço vira https://rafaeladolfocouto.github.io/portfolio
 
+## Idiomas
+
+O português (raiz do site) é a fonte. As versões em inglês (`en/`) e espanhol (`es/`) são geradas por `python3 tools/i18n.py build`, a partir das traduções em `tools/i18n/en.json` e `es.json`. Depois de mudar um texto em português, rode `python3 tools/i18n.py extract`, traduza as chaves novas e rode `build` de novo.
+
 ## Estrutura
 
 - `index.html`: home com os caminhos de leitura
