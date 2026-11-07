@@ -6,7 +6,7 @@ Uso:  python3 tools/i18n.py extract   -> escreve tools/i18n/units.json
 import re,sys,json,os,glob
 from bs4 import BeautifulSoup, NavigableString, Tag
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PAGES=['index','quem-sou','ia-gestao','monetizacao','produtos','blink','shhhift','vilalume','precofeito']
+PAGES=['index','quem-sou','ia-gestao','monetizacao','produtos','blink','shhhift','vilalume','precofeito','clube']
 INLINE={'a','b','i','em','strong','sub','sup','span','br','small','code','mark'}
 SKIP={'script','style','svg','header','footer'}
 ATTRS=['alt','aria-label','title']
@@ -61,12 +61,12 @@ def extract():
     print(len(order),'unidades')
 
 LANG={'en':{'html':'en','theme':('☾ dark','☀ light'),'lang':'English','nav':['Home','About me','AI/ML & management','Data monetization','Products'],'aria_nav':'Main','aria_theme':'Switch between dark and light mode','aria_lang':'Language',
-  'foot':'© 2026 Rafael Couto. Blink, shhhift, Vilalume and Preço Feito are independent projects. shhhift is not affiliated with Spotify, Google, YouTube or Apple.','linkedin':'LinkedIn','skip':'Skip to content'},
+  'foot':'© 2026 Rafael Couto. Blink, shhhift, Vilalume, Preço Feito and Clube Oficina Caseira are independent projects. shhhift is not affiliated with Spotify, Google, YouTube or Apple.','linkedin':'LinkedIn','skip':'Skip to content'},
  'es':{'html':'es','theme':('☾ oscuro','☀ claro'),'lang':'Español','nav':['Inicio','Quién soy','IA/ML y gestión','Monetización de datos','Productos'],'aria_nav':'Principal','aria_theme':'Alternar entre modo oscuro y claro','aria_lang':'Idioma',
-  'foot':'© 2026 Rafael Couto. Blink, shhhift, Vilalume y Preço Feito son proyectos independientes. shhhift no está afiliado a Spotify, Google, YouTube ni Apple.','linkedin':'LinkedIn','skip':'Ir al contenido'}}
+  'foot':'© 2026 Rafael Couto. Blink, shhhift, Vilalume, Preço Feito y Clube Oficina Caseira son proyectos independientes. shhhift no está afiliado a Spotify, Google, YouTube ni Apple.','linkedin':'LinkedIn','skip':'Ir al contenido'}}
 PT={'html':'pt-BR','lang':'Português'}
 NAVHREF=['index.html','quem-sou.html','ia-gestao.html','monetizacao.html','produtos.html']
-NAVKEY={'index':0,'quem-sou':1,'ia-gestao':2,'monetizacao':3,'produtos':4,'blink':4,'shhhift':4,'vilalume':4,'precofeito':4}
+NAVKEY={'index':0,'quem-sou':1,'ia-gestao':2,'monetizacao':3,'produtos':4,'blink':4,'shhhift':4,'vilalume':4,'precofeito':4,'clube':4}
 LOGO=re.search(r'<a class="brand"[^>]*>(<svg.*?</svg>)',open(os.path.join(ROOT,'index.html'),encoding='utf-8').read(),re.S).group(1)
 
 FLAGS={

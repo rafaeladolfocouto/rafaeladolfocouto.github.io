@@ -19,7 +19,7 @@ O português (raiz do site) é a fonte. As versões em inglês (`en/`) e espanho
 
 - `index.html`: home com os caminhos de leitura
 - `quem-sou.html`, `ia-gestao.html`, `monetizacao.html`: conteúdo profissional
-- `produtos.html` e uma página por produto (`blink.html`, `shhhift.html`, `vilalume.html`, `precofeito.html`)
+- `produtos.html` e uma página por produto (`blink.html`, `shhhift.html`, `vilalume.html`, `precofeito.html, clube.html`)
 - `style.css`: identidade Teorema Âmbar, com modo escuro e claro (variáveis em `:root`)
 - `theme.js`: botão de tema, que lembra a escolha do visitante
 
